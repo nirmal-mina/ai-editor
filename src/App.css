@@ -21,22 +21,22 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'SF Mono', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
   
-  /* Refined typography scale with optical adjustments */
-  --font-size-xs: 0.8125rem;     /* 13px - Small labels */
-  --font-size-sm: 0.875rem;      /* 14px - Body text small */
-  --font-size-base: 1rem;        /* 16px - Base body */
-  --font-size-md: 1.125rem;      /* 18px - Large body */
-  --font-size-lg: 1.25rem;       /* 20px - Headings */
-  --font-size-xl: 1.5rem;        /* 24px - Large headings */
-  --font-size-2xl: 1.875rem;     /* 30px - Hero text */
-  --font-size-3xl: 2.25rem;      /* 36px - Display */
+  /* Refined typography scale with optical adjustments - Reduced sizes */
+  --font-size-xs: 0.75rem;       /* 12px - Small labels */
+  --font-size-sm: 0.8125rem;     /* 13px - Body text small */
+  --font-size-base: 0.875rem;    /* 14px - Base body */
+  --font-size-md: 1rem;          /* 16px - Large body */
+  --font-size-lg: 1.125rem;      /* 18px - Headings */
+  --font-size-xl: 1.25rem;       /* 20px - Large headings */
+  --font-size-2xl: 1.5rem;       /* 24px - Hero text */
+  --font-size-3xl: 1.875rem;     /* 30px - Display */
   
   /* Line height system for optimal readability */
-  --line-height-tight: 1.25;     /* Headings */
-  --line-height-snug: 1.375;     /* UI elements */
-  --line-height-normal: 1.5;     /* Short text */
-  --line-height-relaxed: 1.625;  /* Body text */
-  --line-height-loose: 1.75;     /* Long-form reading */
+  --line-height-tight: 1.2;      /* Headings */
+  --line-height-snug: 1.3;       /* UI elements */
+  --line-height-normal: 1.4;     /* Short text */
+  --line-height-relaxed: 1.5;    /* Body text */
+  --line-height-loose: 1.6;      /* Long-form reading */
   
   /* Letter spacing for optical refinement */
   --letter-spacing-tighter: -0.03em;  /* Large headings */
@@ -52,18 +52,18 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   
-  /* Spacing scale based on 4px grid */
+  /* Spacing scale based on 4px grid - Reduced spacing */
   --spacing-0: 0;
-  --spacing-1: 0.25rem;   /* 4px */
-  --spacing-2: 0.5rem;    /* 8px */
-  --spacing-3: 0.75rem;   /* 12px */
-  --spacing-4: 1rem;      /* 16px */
-  --spacing-5: 1.25rem;   /* 20px */
-  --spacing-6: 1.5rem;    /* 24px */
-  --spacing-8: 2rem;      /* 32px */
-  --spacing-10: 2.5rem;   /* 40px */
-  --spacing-12: 3rem;     /* 48px */
-  --spacing-16: 4rem;     /* 64px */
+  --spacing-1: 0.125rem;  /* 2px */
+  --spacing-2: 0.375rem;  /* 6px */
+  --spacing-3: 0.5rem;    /* 8px */
+  --spacing-4: 0.75rem;   /* 12px */
+  --spacing-5: 1rem;      /* 16px */
+  --spacing-6: 1.25rem;   /* 20px */
+  --spacing-8: 1.5rem;    /* 24px */
+  --spacing-10: 2rem;     /* 32px */
+  --spacing-12: 2.5rem;   /* 40px */
+  --spacing-16: 3rem;     /* 48px */
   
   /* Border radius system */
   --radius-sm: 0.375rem;   /* 6px */

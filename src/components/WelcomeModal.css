@@ -21,14 +21,14 @@
 .modal-content {
   background: var(--card-bg-solid);
   border-radius: var(--radius-2xl, 20px);
-  max-width: 640px;
+  max-width: 560px;
   width: 100%;
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--border-color);
   opacity: 0;
   transform: scale(0.9) translateY(30px);
   transition: all var(--transition-slow) var(--ease-bounce);
-  max-height: min(700px, 90vh);
+  max-height: min(600px, 85vh);
   display: flex;
   flex-direction: column;
   position: relative;

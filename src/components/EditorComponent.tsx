@@ -181,11 +181,18 @@ export function EditorComponent({
     const currentText = viewRef.current.state.doc.textContent;
     if (currentText !== content && content !== contentRef.current) {
       const { state } = viewRef.current;
-      const tr = state.tr.replaceWith(
-        0,
-        state.doc.content.size,
-        mySchema.text(content)
-      );
+      let tr;
+      
+      if (content) {
+        tr = state.tr.replaceWith(
+          0,
+          state.doc.content.size,
+          mySchema.text(content)
+        );
+      } else {
+        // Handle empty content by deleting everything
+        tr = state.tr.delete(0, state.doc.content.size);
+      }
       
       try {
         const newDoc = tr.doc;
