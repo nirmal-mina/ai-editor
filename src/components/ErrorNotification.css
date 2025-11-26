@@ -1,0 +1,119 @@
+.error-notification {
+  position: fixed;
+  top: var(--spacing-5, 20px);
+  right: var(--spacing-5, 20px);
+  z-index: var(--z-modal, 1000);
+  animation: slideInBounce 0.4s var(--ease-bounce);
+  max-width: 420px;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px) var(--spacing-5, 20px);
+  background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+  border: 2px solid #fcc;
+  border-left-width: 4px;
+  border-left-color: var(--error-color);
+  border-radius: var(--radius-xl, 12px);
+  box-shadow: 
+    0 8px 24px rgba(239, 68, 68, 0.2),
+    0 4px 12px rgba(239, 68, 68, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated gradient */
+.error-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(239, 68, 68, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: errorShimmer 3s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes errorShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.error-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  animation: errorShake 0.5s var(--ease-in-out) 0.2s;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-5deg); }
+  75% { transform: translateX(5px) rotate(5deg); }
+}
+
+.error-message {
+  flex: 1;
+  color: #991b1b;
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--line-height-relaxed);
+  position: relative;
+  z-index: 1;
+}
+
+.error-dismiss {
+  background: none;
+  border: none;
+  color: #991b1b;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: var(--spacing-1);
+  line-height: 1;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) var(--ease-smooth);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.error-dismiss:hover {
+  background: rgba(153, 27, 27, 0.15);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.error-dismiss:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+@keyframes slideInBounce {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .error-notification {
+    left: var(--spacing-5, 20px);
+    right: var(--spacing-5, 20px);
+    max-width: none;
+  }
+}

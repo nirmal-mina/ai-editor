@@ -1,0 +1,106 @@
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: var(--z-popover, 9999);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color-alpha-10) 0%,
+    var(--accent-color-alpha-10) 100%
+  );
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 50%,
+    var(--primary-color) 100%
+  );
+  background-size: 200% 100%;
+  animation: 
+    progressMove 2s var(--ease-in-out) infinite,
+    progressShimmer 2s linear infinite,
+    progressGlow 2s ease-in-out infinite;
+  box-shadow: 
+    0 0 10px var(--primary-color-alpha-30),
+    0 0 20px var(--accent-color-alpha-20),
+    0 2px 4px var(--primary-color-alpha-20);
+  position: relative;
+}
+
+/* Shimmer effect */
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmerMove 1.5s ease infinite;
+}
+
+@keyframes progressMove {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes progressShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes progressGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px var(--primary-color-alpha-30),
+      0 0 20px var(--accent-color-alpha-20),
+      0 2px 4px var(--primary-color-alpha-20);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px var(--primary-color-alpha-30),
+      0 0 40px var(--accent-color-alpha-30),
+      0 4px 8px var(--primary-color-alpha-30);
+  }
+}
+
+@keyframes shimmerMove {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
