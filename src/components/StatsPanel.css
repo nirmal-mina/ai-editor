@@ -1,9 +1,9 @@
 .stats-panel {
   background: var(--card-bg-solid);
-  border-radius: var(--radius-xl, 12px);
-  padding: var(--spacing-6, 24px);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-4, 16px);
   box-shadow: var(--shadow-sm);
-  margin-top: var(--spacing-6, 24px);
+  margin-top: var(--spacing-4, 16px);
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -35,14 +35,14 @@
 }
 
 .stats-title {
-  font-size: var(--font-size-lg, 18px);
+  font-size: var(--font-size-base, 16px);
   font-weight: var(--font-weight-bold, 700);
   color: var(--text-primary);
-  margin: 0 0 var(--spacing-5, 20px) 0;
+  margin: 0 0 var(--spacing-3, 12px) 0;
   font-family: var(--font-heading);
   letter-spacing: var(--letter-spacing-tight);
   position: relative;
-  padding-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
@@ -54,21 +54,21 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 3px;
-  width: 40px;
+  height: 2px;
+  width: 30px;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   border-radius: var(--radius-full);
   transition: width var(--transition-slow) var(--ease-smooth);
 }
 
 .stats-panel:hover .stats-title::after {
-  width: 80px;
+  width: 60px;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: var(--spacing-4, 16px);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-3, 12px);
   position: relative;
   z-index: 1;
 }
@@ -76,8 +76,8 @@
 .stat-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3, 12px);
-  padding: var(--spacing-4, 16px);
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-3, 12px);
   background: var(--stat-item-bg);
   border-radius: var(--radius-lg, 10px);
   border: 1.5px solid var(--border-color);

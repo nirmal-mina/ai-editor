@@ -5,17 +5,17 @@
 /* Main Wrapper with Impressive Glassmorphism */
 .editor-wrapper {
   position: relative;
-  border-radius: var(--radius-2xl, 20px);
+  border-radius: var(--radius-lg, 12px);
   background: linear-gradient(135deg, var(--card-bg-solid), var(--bg-secondary));
   overflow: hidden;
   box-shadow: 
     0 0 0 1px var(--border-color),
-    0 20px 60px rgba(0, 0, 0, 0.08),
-    0 10px 30px rgba(0, 0, 0, 0.05);
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   transition: all var(--transition-base) var(--ease-smooth);
-  min-height: 500px;
+  min-height: 350px;
 }
 
 /* Animated gradient border */
@@ -60,10 +60,10 @@
 
 .editor-wrapper.focused {
   box-shadow: 
-    0 0 0 4px var(--primary-color-alpha-20),
-    0 25px 70px rgba(91, 95, 199, 0.20),
-    0 15px 40px rgba(124, 58, 237, 0.12);
-  transform: translateY(-4px) scale(1.002);
+    0 0 0 2px var(--primary-color-alpha-20),
+    0 12px 32px rgba(91, 95, 199, 0.15),
+    0 6px 16px rgba(124, 58, 237, 0.08);
+  transform: translateY(-2px) scale(1.001);
 }
 
 .editor-wrapper.focused::before {
@@ -73,37 +73,37 @@
 
 .editor-wrapper.generating {
   box-shadow: 
-    0 0 0 5px var(--accent-color-alpha-30),
-    0 30px 80px rgba(124, 58, 237, 0.30),
-    0 15px 40px rgba(91, 95, 199, 0.18),
-    0 0 100px rgba(124, 58, 237, 0.15);
+    0 0 0 3px var(--accent-color-alpha-30),
+    0 16px 40px rgba(124, 58, 237, 0.20),
+    0 8px 20px rgba(91, 95, 199, 0.12),
+    0 0 50px rgba(124, 58, 237, 0.10);
   animation: generatePulse 2.5s ease-in-out infinite;
 }
 
 @keyframes generatePulse {
   0%, 100% {
     box-shadow: 
-      0 0 0 5px var(--accent-color-alpha-30),
-      0 30px 80px rgba(124, 58, 237, 0.30),
-      0 15px 40px rgba(91, 95, 199, 0.18),
-      0 0 100px rgba(124, 58, 237, 0.15);
+      0 0 0 3px var(--accent-color-alpha-30),
+      0 16px 40px rgba(124, 58, 237, 0.20),
+      0 8px 20px rgba(91, 95, 199, 0.12),
+      0 0 50px rgba(124, 58, 237, 0.10);
   }
   50% {
     box-shadow: 
-      0 0 0 7px var(--accent-color-alpha-30),
-      0 35px 90px rgba(124, 58, 237, 0.40),
-      0 20px 50px rgba(91, 95, 199, 0.25),
-      0 0 120px rgba(124, 58, 237, 0.20);
+      0 0 0 4px var(--accent-color-alpha-30),
+      0 20px 50px rgba(124, 58, 237, 0.28),
+      0 10px 25px rgba(91, 95, 199, 0.18),
+      0 0 60px rgba(124, 58, 237, 0.15);
   }
 }
 
 /* Editor Container */
 .editor-container {
-  min-height: 500px;
-  max-height: 650px;
+  min-height: 350px;
+  max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: var(--spacing-8);
+  padding: var(--spacing-5);
   position: relative;
   z-index: 2;
   scroll-behavior: smooth;
@@ -114,10 +114,10 @@
 .prosemirror-editor {
   outline: none;
   font-family: var(--font-body);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-loose);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   color: var(--text-primary);
-  min-height: 450px;
+  min-height: 320px;
   caret-color: var(--primary-color);
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -125,7 +125,7 @@
 }
 
 .prosemirror-editor p {
-  margin: 0 0 1.2em 0;
+  margin: 0 0 0.8em 0;
   line-height: inherit;
   transition: all var(--transition-base) var(--ease-smooth);
 }
@@ -164,7 +164,7 @@
   left: 0;
   color: var(--text-tertiary);
   pointer-events: none;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   font-style: italic;
   opacity: 0.6;
   animation: placeholderBreath 4s ease-in-out infinite;
@@ -188,22 +188,22 @@
 /* AI Generation Indicator */
 .generation-indicator {
   position: absolute;
-  bottom: var(--spacing-6);
-  right: var(--spacing-6);
+  bottom: var(--spacing-4);
+  right: var(--spacing-4);
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
-  padding: var(--spacing-4) var(--spacing-6);
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
   background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
   color: white;
   border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-wide);
   box-shadow: 
     0 0 0 1px rgba(255, 255, 255, 0.2) inset,
-    0 8px 24px var(--accent-color-alpha-30),
-    0 4px 12px rgba(0, 0, 0, 0.15);
+    0 4px 12px var(--accent-color-alpha-30),
+    0 2px 6px rgba(0, 0, 0, 0.15);
   animation: indicatorSlide 0.4s var(--ease-bounce);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -238,9 +238,9 @@
 }
 
 .generation-spinner {
-  width: 18px;
-  height: 18px;
-  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: white;
   border-right-color: white;
   border-radius: 50%;
