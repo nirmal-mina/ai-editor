@@ -89,7 +89,6 @@ export function EditorComponent({
   const editorRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<EditorView | null>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [charCount, setCharCount] = useState(0);
   
   // Track content to prevent sync loops
   const contentRef = useRef(content);
@@ -108,7 +107,6 @@ export function EditorComponent({
     if (contentRef.current !== text) {
       contentRef.current = text;
       onContentChange(text);
-      setCharCount(text.length);
     }
   }, [onContentChange]);
 
